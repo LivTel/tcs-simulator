@@ -1,0 +1,22 @@
+#!/bin/csh
+
+source /opt/ngat/etc/cshrc
+
+source $DEPLOY_BIN/class_setup
+source $DEPLOY_BIN/tcs_sim_setup
+
+echo $CLASSPATH
+
+setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:$LIB_HOME
+
+setenv ASTRO "-Dastrometry.impl=ngat.astrometry.TestCalculator"
+
+set PORT     = 13021
+set INTERVAL = 1000
+set LAT      = 28.7
+set LON      = 155.0
+#-Dstate.flicker
+$JAVA $ASTRO  TCS_Simulation --port $PORT --interval $INTERVAL --latitude $LAT --longitude $LON
+# >& ${DEPLOY_TMP}/tcs.log &
+
+

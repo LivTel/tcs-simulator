@@ -1,0 +1,4 @@
+Instrument.Status = OK
+Instrument.Status.Detector.Temperature.0.0 = OK
+Instrument.Status.Detector.Temperature.1.0 = OK
+Instrument.Status.Detector.Temperature.1.1 = OK

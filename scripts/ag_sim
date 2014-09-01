@@ -1,0 +1,17 @@
+#!/bin/csh
+
+source /opt/ngat/etc/cshrc
+
+source $DEPLOY_BIN/class_setup
+source $DEPLOY_BIN/tcs_sim_setup
+
+setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:$LIB_HOME
+
+# Usage: ag_sim <name> <port>
+
+set NAME = $1
+set PORT = $2
+
+# Use java  FakeAutoguiderTempServer <port>
+$JAVA FakeAutoguiderTempServer $PORT 10.0 >& ~/ag_{$NAME}.log
+

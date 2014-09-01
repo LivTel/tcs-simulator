@@ -1,0 +1,27 @@
+#!/bin/csh
+
+./sprat_sim &
+echo "SPRAT is GO"
+./i_sim &
+echo "I is GO"
+./o_sim &
+echo "O is GO"
+./rise_sim &
+echo "RISE is GO"
+./ringo_sim &
+echo "RINGO is GO"
+./frodo_sim &
+echo "FRODO are GO"
+
+echo "Starting AG sims"
+./ag_sim cass 6571 &
+./ag_sim ioag 6655 &
+./ag_sim  cag 7865 &
+echo "All AG sims are GO"
+
+./cloud_sim &
+./dust_gen &
+
+/occ/bin/bss_control start &
+
+

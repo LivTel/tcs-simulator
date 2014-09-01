@@ -1,0 +1,20 @@
+#!/bin/csh
+
+source /opt/ngat/etc/cshrc
+
+source $DEPLOY_BIN/class_setup
+
+setenv CLASSPATH ${CLASSPATH}:.
+
+setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:$LIB_HOME
+
+set NAME     = DILLCAM
+#set PORT     = 8283
+set PORT     = 8675
+set ISSHOST  = localhost
+set ISSPORT  = 7383
+set MS       = 1.2
+set DS       = 0.55
+
+java InstrumentControl $NAME $PORT $ISSHOST $ISSPORT $MS $DS
+

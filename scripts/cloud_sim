@@ -1,0 +1,17 @@
+#!/bin/csh
+
+set file=/occ/data/cloud.dat
+
+while (1)
+
+	set dat=`date -u "+%Y-%m-%dT%H:%M:%S"`
+
+	set dd=`date -u "+%S"`
+	
+	set ab=`echo $dd | awk '{print $1/10-34}'`
+
+	echo $dat $ab 10 15 3 0 1 > $file 
+	
+	sleep 7
+
+end

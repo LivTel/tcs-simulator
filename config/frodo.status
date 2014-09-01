@@ -1,0 +1,7 @@
+Instrument.Status = OK
+red.Instrument.Status.Detector.Temperature = OK
+red.Instrument.Status = WARN
+red.Instrument.Status.SDSU.Comms = FAIL
+blue.Instrument.Status.Detector.Temperature = WARN
+blue.Heater\ ADU = 23
+blue.Low\ Voltage\ Supply\ ADU = 1245

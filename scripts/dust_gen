@@ -1,0 +1,28 @@
+#!/bin/csh
+
+set file=/occ/data/tng_dust.dat
+
+while (1)
+
+	set dat=`date -u "+%Y-%m-%dT%H:%M:%S"`
+
+	set dd=`date -u "+%S"`
+	
+	set ab=`echo $dd | awk '{print 50*$1/10}'`
+
+	set rnd = `/bin/bash -c 'echo $RANDOM'`
+	set nab = `echo $ab $rnd | awk '{print S1 + 20*($2-8000)/32000}'`
+
+	if (  `echo $nab | awk '{print $1 > 200}'` == 1  ) then
+	    set nab = 100
+	endif
+
+	echo $dat $nab > $file 
+
+	#echo $dat $nab
+	# This data should only updated every 2 hours
+	sleep 2
+
+	set ab = $nab
+
+end

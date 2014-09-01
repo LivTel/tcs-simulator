@@ -1,0 +1,17 @@
+#!/bin/csh
+
+set javalib = "/home/dev/bin/javalib"
+set javal3p = "/home/dev/bin/javalib_third_party"
+
+source /opt/ngat/etc/cshrc
+source /occ/bin/class_setup
+source /occ/bin/x_setup
+
+
+set POLICY = "-Djava.security.policy=file:///occ/tmp/policy.dat"
+
+
+set JAVA = "/usr/java/jdk1.5.0_16/bin/java"
+
+$JAVA $POLICY ngat.sms.test.TestPhase2ModelProvider --rhost ltdev1 --port 1099 
+#>>&! /occ/tmp/phase2group.log &

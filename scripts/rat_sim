@@ -1,0 +1,22 @@
+#!/bin/csh
+
+source /opt/ngat/etc/cshrc
+
+source $DEPLOY_BIN/class_setup
+source $DEPLOY_BIN/tcs_sim_setup
+
+
+setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:$LIB_HOME
+
+set NAME     = RATCAM
+set PORT     = 6783
+set ISSHOST  = ltsim1
+set ISSPORT  = 7383
+set MS       = 1.0
+set DS       = 0.9
+set MP       = 2
+#-Ddilate=10
+$JAVA  InstrumentControl --name $NAME --port $PORT --iss-host $ISSHOST --iss-port $ISSPORT --prefix "c"\
+        --mean-seeing $MS --std-seeing $DS --mirror-port $MP  >& ~/ratcam.log
+
+

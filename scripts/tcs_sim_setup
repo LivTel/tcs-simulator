@@ -1,0 +1,34 @@
+#!/bin/csh
+#
+#---------------------------------
+# TCS Simulator Environment Setup.
+#---------------------------------
+#
+
+# TCS_SIM Common environment.
+setenv TCS_SIM_HOME   ${DEPLOY_HOME}/sim
+
+# Subdirectories.
+setenv TCS_SIM_SCRIPT ${TCS_SIM_HOME}/scripts
+setenv TCS_SIM_CONFIG ${TCS_SIM_HOME}/config
+setenv TCS_SIM_INST_INFO ${TCS_SIM_CONFIG}/instruments.properties
+
+setenv TCS_SIM_JAR ${TCS_SIM_HOME}/tcs_sim.jar
+
+# Setup any extra PATH here.
+setenv PATH ${PATH}:${TCS_SIM_HOME}
+setenv PATH ${PATH}:${TCS_SIM_SCRIPT}
+
+# Setup any extra CLASSPATH here.
+echo $CLASSPATH | grep ${TCS_SIM_JAR} > /dev/null
+if ( $status != 0 ) then
+    setenv CLASSPATH ${CLASSPATH}:${TCS_SIM_JAR}
+endif
+ 
+# Setup any extra LD_LIBRARY_PATH here.
+foreach file ($DEPLOY_UTIL)
+    echo $LD_LIBRARY_PATH | grep $file > /dev/null
+    if ( $status != 0 ) then
+	setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:${file}
+    endif
+end

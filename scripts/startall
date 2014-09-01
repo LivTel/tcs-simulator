@@ -1,0 +1,16 @@
+#!/bin/csh
+
+/occ/sim/scripts/ringo_sim &
+/occ/sim/scripts/thor_sim &
+/occ/sim/scripts/rise_sim &
+/occ/sim/scripts/o_sim &
+/occ/sim/scripts/frodo_sim &
+/occ/sim/scripts/rat_sim &
+
+/occ/sim/scripts/tcs_sim &
+/occ/sim/scripts/ag_sim &
+/occ/sim/scripts/cloud_sim &
+
+
+
+

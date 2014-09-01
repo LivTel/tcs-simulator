@@ -1,0 +1,27 @@
+#!/bin/csh
+
+source /opt/ngat/etc/cshrc
+
+source $DEPLOY_BIN/class_setup
+
+setenv CLASSPATH ${CLASSPATH}:.
+
+setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:$LIB_HOME
+
+# instrument name (for logging).
+set NAME     = RATCAM
+
+# ICS Control port.
+set PORT     = 6373
+
+# ISS Host/port - the ISS is currently provided by the RCS.
+set ISSHOST  = localhost
+set ISSPORT  = 7363
+
+# Mean value for seeing (arcsec).
+set MS       = 0.65
+# Spread in seeing values (arcsec).
+set DS       = 0.35
+
+java InstrumentControl $NAME $PORT $ISSHOST $ISSPORT $MS $DS
+

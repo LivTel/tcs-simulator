@@ -1,0 +1,19 @@
+#!/bin/csh
+
+source /opt/ngat/etc/cshrc
+
+source $DEPLOY_BIN/class_setup
+
+setenv CLASSPATH ${CLASSPATH}:.
+
+setenv LD_LIBRARY_PATH ${LD_LIBRARY_PATH}:$LIB_HOME
+
+set NAME     = MEABURN
+set PORT     = 8765
+set ISSHOST  = localhost
+set ISSPORT  = 7383
+set MS       = 0.7
+set DS       = 0.35
+set MP = 2
+$JAVA -Ddilate=10 InstrumentControl $NAME $PORT $ISSHOST $ISSPORT --prefix "n" $MS $DS $MP
+
