@@ -246,7 +246,7 @@ public class InstrumentControl {
 
 		ACQUIRE_DP_ACK adack = new ACQUIRE_DP_ACK("");
 		adack.setTimeToComplete(120000);	
-		adack.setFilename("/icc/tmp/"+filePrefix+"q_"+datestr+"_"+(iac)+"_1_1_0.fits");		
+		adack.setFilename("/icc/tmp/"+filePrefix+"_q_"+datestr+"_"+(iac)+"_1_1_0.fits");		
 		implementor.sendAck(adack);
 		
 		ACQUIRE_DONE done = new ACQUIRE_DONE("");
@@ -310,20 +310,20 @@ public class InstrumentControl {
 
 		FILENAME_ACK fack = new FILENAME_ACK("");
 		fack.setTimeToComplete(10000);
-		fack.setFilename("/icc/tmp/"+filePrefix+"l_"+datestr+"_"+(ilf)+"_1_1_0.fits");		
+		fack.setFilename("/icc/tmp/"+filePrefix+"_l_"+datestr+"_"+(ilf)+"_1_1_0.fits");		
 		implementor.sendAck(fack);	
 
 		try {Thread.sleep(5000L);} catch (Exception e) {}
 
 		FILENAME_ACK fpack = new FILENAME_ACK("");
 		fpack.setTimeToComplete(10000);
-		fpack.setFilename("/icc/tmp/"+filePrefix+"l_"+datestr+"_"+(ilf)+"_1_1_1.fits");		
+		fpack.setFilename("/icc/tmp/"+filePrefix+"_l_"+datestr+"_"+(ilf)+"_1_1_1.fits");		
 		implementor.sendAck(fpack);	
 
 		try {Thread.sleep(5000L);} catch (Exception e) {}
 	
 		LAMPFLAT_DONE done = new LAMPFLAT_DONE("");
-		done.setFilename("icc/tmp/"+filePrefix+"l_"+datestr+"_"+(ilf)+"_1_1_1.fits");	
+		done.setFilename("icc/tmp/"+filePrefix+"+l_"+datestr+"_"+(ilf)+"_1_1_1.fits");	
 
 		reply = done;
 		reply.setSuccessful(true);
@@ -362,20 +362,20 @@ public class InstrumentControl {
 
 		FILENAME_ACK fack = new FILENAME_ACK("");
 		fack.setTimeToComplete(10000);
-		fack.setFilename("/icc/tmp/"+filePrefix+"a_"+datestr+"_"+(ilf)+"_1_1_0.fits");		
+		fack.setFilename("/icc/tmp/"+filePrefix+"_a_"+datestr+"_"+(ilf)+"_1_1_0.fits");		
 		implementor.sendAck(fack);	
 
 		try {Thread.sleep(5000L);} catch (Exception e) {}
 
 		FILENAME_ACK fpack = new FILENAME_ACK("");
 		fpack.setTimeToComplete(10000);
-		fpack.setFilename("/icc/tmp/"+filePrefix+"a_"+datestr+"_"+(ilf)+"_1_1_1.fits");		
+		fpack.setFilename("/icc/tmp/"+filePrefix+"_a_"+datestr+"_"+(ilf)+"_1_1_1.fits");		
 		implementor.sendAck(fpack);	
 
 		try {Thread.sleep(5000L);} catch (Exception e) {}
 	
 		ARC_DONE done = new ARC_DONE("");
-		done.setFilename("icc/tmp/"+filePrefix+"a_"+datestr+"_"+(ilf)+"_1_1_1.fits");	
+		done.setFilename("icc/tmp/"+filePrefix+"_a_"+datestr+"_"+(ilf)+"_1_1_1.fits");	
 
 		reply = done;
 		reply.setSuccessful(true);
@@ -392,20 +392,20 @@ public class InstrumentControl {
 
 		FILENAME_ACK fack = new FILENAME_ACK("");
 		fack.setTimeToComplete(10000);
-		fack.setFilename("/icc/tmp/"+filePrefix+"d_"+datestr+"_"+(ilf)+"_1_1_0.fits");		
+		fack.setFilename("/icc/tmp/"+filePrefix+"_d_"+datestr+"_"+(ilf)+"_1_1_0.fits");		
 		implementor.sendAck(fack);	
 
 		try {Thread.sleep(2000L);} catch (Exception e) {}
 
 		FILENAME_ACK fpack = new FILENAME_ACK("");
 		fpack.setTimeToComplete(10000);
-		fpack.setFilename("/icc/tmp/"+filePrefix+"d_"+datestr+"_"+(ilf)+"_1_1_1.fits");		
+		fpack.setFilename("/icc/tmp/"+filePrefix+"_d_"+datestr+"_"+(ilf)+"_1_1_1.fits");		
 		implementor.sendAck(fpack);	
 
 		try {Thread.sleep(3000L);} catch (Exception e) {}
 	
 		DARK_DONE done = new DARK_DONE("");
-		done.setFilename("icc/tmp/"+filePrefix+"d_"+datestr+"_"+(ilf)+"_1_1_1.fits");	
+		done.setFilename("icc/tmp/"+filePrefix+"_d_"+datestr+"_"+(ilf)+"_1_1_1.fits");	
 
 		reply = done;
 		reply.setSuccessful(true);
@@ -429,20 +429,20 @@ public class InstrumentControl {
 
 		FILENAME_ACK fack = new FILENAME_ACK("");
 		fack.setTimeToComplete(10000);
-		fack.setFilename("/icc/tmp/"+filePrefix+"l_"+datestr+"_"+(ilf)+"_1_1_0.fits");		
+		fack.setFilename("/icc/tmp/"+filePrefix+"_l_"+datestr+"_"+(ilf)+"_1_1_0.fits");		
 		implementor.sendAck(fack);	
 
 		try {Thread.sleep(5000L);} catch (Exception e) {}
 
 		FILENAME_ACK fpack = new FILENAME_ACK("");
 		fpack.setTimeToComplete(10000);
-		fpack.setFilename("/icc/tmp/"+filePrefix+"l_"+datestr+"_"+(ilf)+"_1_1_1.fits");		
+		fpack.setFilename("/icc/tmp/"+filePrefix+"_l_"+datestr+"_"+(ilf)+"_1_1_1.fits");		
 		implementor.sendAck(fpack);	
 
 		try {Thread.sleep(5000L);} catch (Exception e) {}
 	
 		FRODOSPEC_LAMPFLAT_DONE done = new FRODOSPEC_LAMPFLAT_DONE("");
-		done.setFilename("icc/tmp/"+filePrefix+"l_"+datestr+"_"+(ilf)+"_1_1_1.fits");	
+		done.setFilename("icc/tmp/"+filePrefix+"_l_"+datestr+"_"+(ilf)+"_1_1_1.fits");	
 
 		reply = done;
 		reply.setSuccessful(true);
@@ -464,20 +464,20 @@ public class InstrumentControl {
 
 		FILENAME_ACK fack = new FILENAME_ACK("");
 		fack.setTimeToComplete(10000);
-		fack.setFilename("/icc/tmp/"+filePrefix+"a_"+datestr+"_"+(ilf)+"_1_1_0.fits");		
+		fack.setFilename("/icc/tmp/"+filePrefix+"_a_"+datestr+"_"+(ilf)+"_1_1_0.fits");		
 		implementor.sendAck(fack);	
 
 		try {Thread.sleep(5000L);} catch (Exception e) {}
 
 		FILENAME_ACK fpack = new FILENAME_ACK("");
 		fpack.setTimeToComplete(10000);
-		fpack.setFilename("/icc/tmp/"+filePrefix+"a_"+datestr+"_"+(ilf)+"_1_1_1.fits");		
+		fpack.setFilename("/icc/tmp/"+filePrefix+"_a_"+datestr+"_"+(ilf)+"_1_1_1.fits");		
 		implementor.sendAck(fpack);	
 
 		try {Thread.sleep(5000L);} catch (Exception e) {}
 	
 		FRODOSPEC_ARC_DONE done = new FRODOSPEC_ARC_DONE("");
-		done.setFilename("icc/tmp/"+filePrefix+"a_"+datestr+"_"+(ilf)+"_1_1_1.fits");	
+		done.setFilename("icc/tmp/"+filePrefix+"_a_"+datestr+"_"+(ilf)+"_1_1_1.fits");	
 
 		reply = done;
 		reply.setSuccessful(true);
@@ -504,20 +504,20 @@ public class InstrumentControl {
 
 		FILENAME_ACK fack = new FILENAME_ACK("");
 		fack.setTimeToComplete(10000);
-		fack.setFilename("/icc/tmp/"+filePrefix+"d_"+datestr+"_"+(ilf)+"_1_1_0.fits");		
+		fack.setFilename("/icc/tmp/"+filePrefix+"_d_"+datestr+"_"+(ilf)+"_1_1_0.fits");		
 		implementor.sendAck(fack);	
 
 		try {Thread.sleep(2000L);} catch (Exception e) {}
 
 		FILENAME_ACK fpack = new FILENAME_ACK("");
 		fpack.setTimeToComplete(10000);
-		fpack.setFilename("/icc/tmp/"+filePrefix+"d_"+datestr+"_"+(ilf)+"_1_1_1.fits");		
+		fpack.setFilename("/icc/tmp/"+filePrefix+"_d_"+datestr+"_"+(ilf)+"_1_1_1.fits");		
 		implementor.sendAck(fpack);	
 
 		try {Thread.sleep(3000L);} catch (Exception e) {}
 	
 		FRODOSPEC_DARK_DONE done = new FRODOSPEC_DARK_DONE("");
-		done.setFilename("icc/tmp/"+filePrefix+"d_"+datestr+"_"+(ilf)+"_1_1_1.fits");	
+		done.setFilename("icc/tmp/"+filePrefix+"_d_"+datestr+"_"+(ilf)+"_1_1_1.fits");	
 
 		reply = done;
 		reply.setSuccessful(true);
@@ -596,7 +596,7 @@ public class InstrumentControl {
 		// dump the fits
 		int ixx = 0;			
 		TIMED_MULTRUNAT_DONE tdone = new TIMED_MULTRUNAT_DONE("");
-		tdone.setFilename("/icc/tmp/"+filePrefix+"e_"+datestr+"_"+im+"_"+ixx+"_1_0.fits");
+		tdone.setFilename("/icc/tmp/"+filePrefix+"_e_"+datestr+"_"+im+"_"+ixx+"_1_0.fits");
 		double seeing = avSee + Math.random()*deltaSee - 0.5*deltaSee;
 		tdone.setSeeing((float)seeing);
 		tdone.setCounts(15000.0f);
@@ -826,9 +826,9 @@ public class InstrumentControl {
 		   		    
 		    try {Thread.sleep(3000+expose);} catch (Exception e) {}
 		    
-		    String affix = "e_";
+		    String affix = "_e_";
 		    if (((MULTRUN)request).getStandard())
-			affix = "s_";
+			affix = "_s_";
 		    
 		    if (! durationExposure) {
 			MULTRUN_ACK mack = new MULTRUN_ACK("");
@@ -862,9 +862,9 @@ public class InstrumentControl {
 		AG_STOP agstop = new AG_STOP(request.getId());
 		COMMAND_DONE agtstopdone = sendIssCommand(agstop, 40000L);
 			  
-		String affix = "e_";
+		String affix = "_e_";
 		if (((MULTRUN)request).getStandard())
-		    affix = "s_";
+		    affix = "_s_";
 		
 		ixx = 0;
 		for (int ix = 0; ix < number; ix++) {
@@ -1001,9 +1001,9 @@ public class InstrumentControl {
 		    MULTRUN_ACK mack = new MULTRUN_ACK("");
 		    mack.setTimeToComplete(30000+expose);
 		    if (arm == FrodoSpecConfig.RED_ARM)
-			mack.setFilename("/icc/tmp/re_"+datestr+"_"+(im)+"_"+ix+"_1_0.fits");
+			mack.setFilename("/icc/tmp/r_e_"+datestr+"_"+(im)+"_"+ix+"_1_0.fits");
 		    else
-			mack.setFilename("/icc/tmp/be_"+datestr+"_"+(im)+"_"+ix+"_1_0.fits");
+			mack.setFilename("/icc/tmp/b_e_"+datestr+"_"+(im)+"_"+ix+"_1_0.fits");
 		    implementor.sendAck(mack);	
 
 		     // dump the fits
@@ -1012,7 +1012,7 @@ public class InstrumentControl {
 		    else 
 			filePrefix = "b";
 		    try {
-			File file = new File("/icc/tmp/"+filePrefix+"e_"+datestr+"_"+im+"_"+ixx+"_1_0.fits");
+			File file = new File("/icc/tmp/"+filePrefix+"_e_"+datestr+"_"+im+"_"+ixx+"_1_0.fits");
 			PrintStream pout = new PrintStream(new FileOutputStream(file));
 			ih = v.iterator();
 			while (ih.hasNext()) {
@@ -1045,9 +1045,9 @@ public class InstrumentControl {
 		    MULTRUN_DP_ACK mdack = new MULTRUN_DP_ACK("");
 		    mdack.setTimeToComplete(30000+expose);
 		    if (arm == FrodoSpecConfig.RED_ARM)			
-			mdack.setFilename("/icc/tmp/re_"+datestr+"_"+(im)+"_"+ix+"_1_1.fits");
+			mdack.setFilename("/icc/tmp/r_e_"+datestr+"_"+(im)+"_"+ix+"_1_1.fits");
 		    else
-			mdack.setFilename("/icc/tmp/be_"+datestr+"_"+(im)+"_"+ix+"_1_1.fits");
+			mdack.setFilename("/icc/tmp/b_e_"+datestr+"_"+(im)+"_"+ix+"_1_1.fits");
 		    double seeing = avSee + Math.random()*deltaSee - 0.5*deltaSee;
 		    mdack.setSeeing((float)seeing);		   
 		    implementor.sendAck(mdack);	
@@ -1058,9 +1058,9 @@ public class InstrumentControl {
 		
 		FRODOSPEC_MULTRUN_DONE done = new  FRODOSPEC_MULTRUN_DONE("");
 		if (arm == FrodoSpecConfig.RED_ARM)	
-		    done.setFilename("icc/tmp/re_"+datestr+"_"+(im)+"_"+ixx+"_1_0.fits");
+		    done.setFilename("icc/tmp/r_e_"+datestr+"_"+(im)+"_"+ixx+"_1_0.fits");
 		else
-		    done.setFilename("icc/tmp/be_"+datestr+"_"+(im)+"_"+ixx+"_1_0.fits"); 
+		    done.setFilename("icc/tmp/b_e_"+datestr+"_"+(im)+"_"+ixx+"_1_0.fits"); 
 
 		double seeing = avSee + Math.random()*deltaSee - 0.5*deltaSee;
 		done.setSeeing((float)seeing);
