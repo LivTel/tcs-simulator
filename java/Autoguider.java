@@ -12,7 +12,7 @@ public class Autoguider extends ControlThread {
 
     private int mode;
     
-    private long timeToAcquire;
+    private long timeToAcquire = 20000L;
 
     public Autoguider(TCS_Status sdb, long interval) {
 	super("AUTOGUIDER", true);

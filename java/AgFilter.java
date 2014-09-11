@@ -27,7 +27,7 @@ public class AgFilter extends ControlThread {
 
     private boolean failure = false;
 
-    /** Create an MirrorCover with given update interval.
+    /** Create an Agfilter with given update interval.
      * @param telescope Telescope status block.
      * @param interval Update interval (ms).
      */
