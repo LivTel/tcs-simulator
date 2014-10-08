@@ -284,10 +284,18 @@ public class InstrumentControl {
 				reply.setSuccessful(true);
 
 			} else if (request instanceof ACQUIRE) {
+				ACQUIRE acquireCommand = null;
+				String acquireRAString,acquireDecString;
+				
 				iac++;
 
+				acquireCommand = (ACQUIRE)request;
+				acquireRAString = Position.formatHMSString(acquireCommand.getRA(),":");
+				acquireDecString = Position.formatDMSString(acquireCommand.getDec(),":");
+				System.err.println("ACQUIRE:Mode:"+acquireCommand.getAcquisitionMode()+"RA:"+acquireRAString+" Dec:"+acquireDecString+
+						" X Pixel:"+acquireCommand.getXPixel()+" Y Pixel:"+acquireCommand.getYPixel()+
+						" Threshold:"+acquireCommand.getThreshold()+" Moving:"+acquireCommand.getMoving());
 				String datestr = fdf.format(new Date());
-
 				ACQUIRE_DP_ACK adack = new ACQUIRE_DP_ACK("");
 				adack.setTimeToComplete(120000);
 				adack.setFilename("/icc/tmp/" + filePrefix + "_q_" + datestr
