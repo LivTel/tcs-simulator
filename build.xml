@@ -81,7 +81,7 @@
           description = "Create class JAR">
     
     <echo message = "Jarring"/>
-    <jar jarfile = "${javalib.dir}/${jar}" basedir = "${build.dir}" update = "true" />
+    <jar jarfile = "${javalib.dir}/${jar}" basedir = "${class.dir}" update = "true" />
     <echo message="Created jar: ${jar}"/>
 
   </target>
