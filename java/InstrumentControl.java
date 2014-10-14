@@ -288,9 +288,10 @@ public class InstrumentControl {
 				String acquireRAString,acquireDecString;
 				
 				iac++;
-
+				System.err.println("ACQUIRE:Starting.");
 				acquireCommand = (ACQUIRE)request;
 				acquireRAString = Position.formatHMSString(acquireCommand.getRA(),":");
+				System.err.println("ACQUIRE:RA = "+acquireRAString+".");
 				acquireDecString = Position.formatDMSString(acquireCommand.getDec(),":");
 				System.err.println("ACQUIRE:Mode:"+acquireCommand.getAcquisitionMode()+"RA:"+acquireRAString+" Dec:"+acquireDecString+
 						" X Pixel:"+acquireCommand.getXPixel()+" Y Pixel:"+acquireCommand.getYPixel()+
@@ -305,11 +306,12 @@ public class InstrumentControl {
 				ACQUIRE_DONE done = new ACQUIRE_DONE("");
 				reply = done;
 				reply.setSuccessful(true);
-
+				System.err.println("ACQUIRE:Sleeping for 10secs.");
 				try {
 					Thread.sleep(10000L);
 				} catch (Exception e) {
 				}
+				System.err.println("ACQUIRE:Finished sleeping for 10secs.");
 
 			} else if (request instanceof REBOOT) {
 				iac++;
